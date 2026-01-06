@@ -1,3 +1,7 @@
+import com.sun.jdi.StringReference;
+
+import java.lang.ref.WeakReference;
+
 /**
     Reference Initialization Of Object, Object Referencing To Another Variable Will Not Create a New
         Copy Or Replica Of That Object Instead It Points To The Same Memory Location, Changes Made To

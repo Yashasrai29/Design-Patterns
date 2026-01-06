@@ -60,6 +60,7 @@ public class Main {
                         previous.next = head.next;
                     }
                 }
+                previous = head;
                 head = head.next;
             }
         }

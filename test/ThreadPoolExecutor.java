@@ -45,6 +45,7 @@ public class ThreadPoolExecutor {
 
     public void service(){
         try {
+//            LinkedBlockingQueue<Runnable> lq = new LinkedBlockingQueue<>();
             ArrayBlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(5);
             java.util.concurrent.ThreadPoolExecutor executor = new java.util.concurrent.ThreadPoolExecutor(2, 3, 1, TimeUnit.HOURS, queue);
             for (int i = 1; i <= 10; i++) {

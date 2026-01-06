@@ -12,7 +12,14 @@ public class demo {
 
 
     public static void main(String [] args){
+        demo d1 = new demo();
+        demo d2 = new demo();
+        Class<? extends demo> aClass = d1.getClass();
 
+        Class<? extends demo> bClass = d2.getClass();
+        if(aClass == bClass){
+            System.out.println("same class");
+        }
         List<Integer> list = List.of(1, 2,1,2,3);
 
         Optional<Integer> unq = list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
@@ -35,6 +42,20 @@ public class demo {
         for(Map.Entry<Character, List<Integer>> entry : map.entrySet()){
             System.out.println("each key "+entry.getKey() + " val "+entry.getValue());
         }
+
+//        List<Map.Entry<Character, Integer>> entries =
+
+        List<Map.Entry<Character, Long>> collect = IntStream.range(0, str.length())
+                .boxed().collect(Collectors.groupingBy(e -> str.charAt(e), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .map(e -> {
+                    if (e.getValue() == 1) {
+                        return e;
+                    }
+                    return null;
+                }).filter(Objects::nonNull).collect(Collectors.toList());
+
 
 //        for(int i = 0 ; i < 15 ; i++) {
 //            int r = ThreadLocalRandom.current().nextInt(65, 76);

@@ -2,6 +2,7 @@ package bridge;
 
 public class Main {
     public static void main(String [] args){
+
         Remote newRemote = new SonyNewRemote();
         Remote oldRemote = new SonyOldRemote();
 
@@ -12,5 +13,6 @@ public class Main {
         TV tv1 = new Sony(oldRemote);
         tv1.on();
         tv1.off();
+
     }
 }

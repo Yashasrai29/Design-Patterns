@@ -1,5 +1,6 @@
 package test;
 
+import javax.xml.catalog.Catalog;
 import java.io.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,10 +31,21 @@ public class ParallelStream {
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             Object val = objectInputStream.readObject();
             System.out.println("val "+((String) val));
+
         }catch(IOException e){
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
+        }
+
+        try(BufferedReader bf = new BufferedReader(new FileReader("serialize.text"))){
+            String line;
+            while( (line = bf.readLine()) != null){
+                System.out.println(" line "+line);
+            }
+        }
+        catch(Exception e){
+
         }
 
     }

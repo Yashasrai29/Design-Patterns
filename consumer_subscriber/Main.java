@@ -3,8 +3,8 @@ package consumer_subscriber;
 
 public class Main {
     public static void main(String[] args) {
-        SharedResource resource = new SharedResource();
-
+//        SharedResource resource = new SharedResource();
+        AsyncProcessor resource = new AsyncProcessor();
         Thread producer = new Thread(() -> {
             try {
                 for (int i = 1; i <= 5; i++) {
@@ -18,8 +18,10 @@ public class Main {
 
         Thread consumer = new Thread(() -> {
             try {
-                for (int i = 1; i <= 5; i++) {
-                    resource.consume();
+                while (true) {
+                    int val = resource.consume();
+
+                    System.out.println("1 : Consumed: " + val);
                     Thread.sleep(1000);
                 }
             } catch (InterruptedException e) {
@@ -27,8 +29,58 @@ public class Main {
             }
         });
 
+        Thread consumer2 = new Thread(() -> {
+            try {
+                while (true) {
+                    int val = resource.consume();
+
+                    System.out.println("2 : Consumed: " + val);
+                    Thread.sleep(1000);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+
+        Thread consumer3 = new Thread(() -> {
+            try {
+                while (true) {
+                    int val = resource.consume();
+
+                    System.out.println("3 : Consumed: " + val);
+                    Thread.sleep(1000);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+
+//        Thread consumer2 = new Thread(() -> {
+//            try {
+//                for (int i = 1; i <= 5; i++) {
+//                    resource.consume();
+//                    Thread.sleep(1000);
+//                }
+//            } catch (InterruptedException e) {
+//                Thread.currentThread().interrupt();
+//            }
+//        });
+//
+//        Thread consumer3 = new Thread(() -> {
+//            try {
+//                for (int i = 1; i <= 5; i++) {
+//                    resource.consume();
+//                    Thread.sleep(1000);
+//                }
+//            } catch (InterruptedException e) {
+//                Thread.currentThread().interrupt();
+//            }
+//        });
+
         producer.start();
         consumer.start();
+        consumer2.start();
+        consumer3.start();
     }
 }
 

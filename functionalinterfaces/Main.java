@@ -1,6 +1,6 @@
 package functionalinterfaces;
 
-
+import java.util.function.*;
 
 class Main {
 
