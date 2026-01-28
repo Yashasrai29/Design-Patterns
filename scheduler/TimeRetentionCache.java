@@ -30,7 +30,7 @@ public class TimeRetentionCache<K, V> {
     public void startScheduler() {
         ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
 
-        service.scheduleAtFixedRate(this::schedule, 1, 10, TimeUnit.SECONDS);
+        service.scheduleAtFixedRate(this::schedule, 1, time, TimeUnit.SECONDS);
 
     }
 

@@ -21,11 +21,12 @@ public class CustomScheduler {
             }
         }
         public static void main(String[] args) {
-            // ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
-
-            // service.scheduleAtFixedRate(Main :: schedule, 0, 10, TimeUnit.SECONDS);
+//             ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+//
+//             service.scheduleAtFixedRate(CustomScheduler :: schedule, 0, 10, TimeUnit.SECONDS);
 
             Timer timer = new Timer();
+
             MyTask myTask = new MyTask();
             timer.scheduleAtFixedRate(myTask, 0, 5000);
         }

@@ -33,17 +33,18 @@ public class ThirdPartyApiCall {
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
 //        return (String) connection.getContent();
-        if(connection.getResponseCode() != HttpURLConnection.HTTP_OK){
+        if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
             throw new RuntimeException("Not Found");
         }
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        StringBuilder sb = new StringBuilder();
-        String input;
-        while((input = bufferedReader.readLine()) != null){
-            sb.append(input);
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+            StringBuilder sb = new StringBuilder();
+            String input;
+            while ((input = bufferedReader.readLine()) != null) {
+                sb.append(input);
+            }
+//        bufferedReader.close();
+            return sb.toString();
         }
-        bufferedReader.close();
-        return sb.toString();
     }
 
     public static void main(String [] args) throws IOException, InterruptedException {

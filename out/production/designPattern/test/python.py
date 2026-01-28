@@ -4,8 +4,8 @@
 #
 # class Animal(ABC):
 #     @abstractmethod
-# def feed():
-#     pass
+#     def feed():
+#         pass
 #
 # class Dog(Animal):
 #
@@ -14,89 +14,91 @@
 #
 #     def feed(self):
 #         print("feeding dog")
-#     pass
+#         pass
 #
 #     def get_legs(self):
 #         return self.__private_legs
 #
-# @staticmethod
-# def static_response():
-#     return "Have a great day sweat heart"
+#     @staticmethod
+#     def static_response():
+#         return "Have a great day sweat heart"
 #
 #
-#     print("Try programiz.pro")
-#     dog = Dog(4);
-#     print(dog.feed())
+# print("Try programiz.pro")
+# dog = Dog(4);
+# print(dog.feed())
 #
-#     print(dog.get_legs())
+# print(dog.get_legs())
 #
-#     print(Dog.static_response())
-#     print(dog.static_response())
+# print(Dog.static_response())
+# print(dog.static_response())
 #
 #
-#     for i in range(1,10):
-#         print("range ", i)
+# for i in range(1,10):
+#     print("range ", i)
 #
-#     li :list = ["one", "two", "three", "four"]
-#     for each in li:
-#         print("each ", each)
+# li :list = ["one", "two", "three", "four"]
+# for each in li:
+#     print("each ", each)
 #
-#     li2 = filter(lambda n: len(n) > 3, li)
-#     for l2 in li2:
-#         print("li2 ", l2)
+# for index, each in enumerate(li):
+#     print("each ", each, " index ", index)
 #
-#     touppercase = list(map(str.upper, li))
-#     for upp in touppercase:
-#         print("upper ", upp)
+# li2 = filter(lambda n: len(n) > 3, li)
+# for l2 in li2:
+#     print("li2 ", l2)
 #
-#     numbers = [1, 2, 3, 4, 5, 6]
+# touppercase = list(map(str.upper, li))
+# for upp in touppercase:
+#     print("upper ", upp)
 #
-#     multiple = map(lambda n : n * n, numbers)
-#     for m in multiple:
-#         print("multi ", m)
+# numbers = [1, 2, 3, 4, 5, 6]
 #
-#     my_set = {1, 2}
-#     my_set.add(8)
+# multiple = map(lambda n : n * n, numbers)
+# for m in multiple:
+#     print("multi ", m)
 #
-#     my_list = [2,3,4,5]
-#     my_set.update(my_list)
-#     my_set.remove(5)
-#     print(my_set)
+# my_set = {1, 2}
+# my_set.add(8)
 #
-#     def write(str):
-#         def consolelog():
+# my_list = [2,3,4,5]
+# my_set.update(my_list)
+# my_set.remove(5)
+# print(my_set)
+#
+# def write(str):
+#     def consolelog():
 #         print(str)
-#
 #     return consolelog
 #
-#     log = write("hello world")
+# log = write("hello world")
 #
-#     log()
+# log()
 #
-#     def my_decorator(func):
-#         def wrapper():
+# def my_decorator(func):
+#     def wrapper():
 #         print("Something is happening before the function is called.")
-#     func()
-#     print("Something is happening after the function is called.")
+#         func()
+#         print("Something is happening after the function is called.")
 #     return wrapper
 #
 # @my_decorator
 # def say_hello():
 #     print("Hello!")
 #
-#     say_hello()
+# say_hello()
 #
-#     def repeat(no):
-#         def repeat_decorator(func):
-#     # This wrapper function is the replacement for 'greet'
-#     def wrapper(*args):
-#     # The loop runs ONLY when wrapper (i.e., greet) is called
-#     for i in range(no):
-#         print(f"--- Repeating {i + 1} time ---")
-#     # CALL the original function (func) inside the loop
-#     func(*args)
+# def repeat(no):
+#     def repeat_decorator(func):
+#         # This wrapper function is the replacement for 'greet'
+#         def wrapper(*args):
+#             # The loop runs ONLY when wrapper (i.e., greet) is called
+#             for i in range(no):
+#                 print(f"--- Repeating {i + 1} time ---")
+#                 # CALL the original function (func) inside the loop
+#                 func(*args)
 #
-#     return wrapper # Return the function that contains the loop logic
+#         return wrapper # Return the function that contains the loop logic
 #
 #     return repeat_decorator
 #
@@ -104,7 +106,7 @@
 # def greet(name):
 #     print(f"hello Hi {name} ")
 #
-#     greet("sweaty")
+# greet("sweaty")
 # hash_map = dict({"name":"yashas"})
 # hash_map["name"] = "Yashas Rai"
 # hash_map["RS"] = 200
@@ -115,8 +117,9 @@
 #
 # for vals in hash_map.values():
 #     print("vals ", vals)
-# Online Python compiler (interpreter) to run Python online.
-# Write Python 3 code in this online editor and run it.
+#
+# # Online Python compiler (interpreter) to run Python online.
+# # Write Python 3 code in this online editor and run it.
 # from abc import ABC, abstractmethod
 #
 #

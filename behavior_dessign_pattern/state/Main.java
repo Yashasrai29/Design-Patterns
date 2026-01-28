@@ -5,9 +5,9 @@ public class Main {
         Context context = new Context();
         State on = new OnState();
         State off = new OffState();
-        context.setState(on);
+        on.set(context);
         System.out.println("? "+(context.state instanceof OnState));
-        context.setState(off);
+//        context.setState(off);
 
         System.out.println("? "+(context.state instanceof OffState));
 

@@ -1,0 +1,28 @@
+
+simple Library Management System where users can borrow and return books.
+
+
+
+        Requirements
+
+        Main Classes:
+
+        1.     Book
+
+        2.     User
+
+        3.     Library
+
+        Functional Requirements:
+
+        Library should:
+
+
+        ·       Add new books
+
+        ·       Borrow books
+
+        ·       Return books
+
+        ·       List all available books
+

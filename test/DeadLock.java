@@ -18,7 +18,7 @@ public class DeadLock {
 //                            Thread.sleep(2000);
                             System.out.println("t1 synchronized s1");
                         }
-                    }catch(Exception e){
+                    } catch(Exception e){
                         e.printStackTrace();
                     }
 
@@ -29,11 +29,11 @@ public class DeadLock {
         Thread t2 = new Thread(new Runnable(){
             @Override
             public void run(){
-                synchronized(s1){
+                synchronized(s2){
                     try{
 //                        Thread.sleep(2000);
                         System.out.println("t2 synchronized s1");
-                        synchronized(s2){
+                        synchronized(s1){
 //                            Thread.sleep(2000);
                             System.out.println("t2 synchronized s2");
                         }

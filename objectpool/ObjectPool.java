@@ -27,7 +27,7 @@ public abstract class ObjectPool<T> {
     public synchronized T acquire(){
         T object = pool.poll();
         if(object == null){
-            if(pool.size() < MAX_SIZE ){
+            if(pool.size() <= MAX_SIZE ){
                 object = create();
                 pool.add(object);
             }
@@ -36,7 +36,7 @@ public abstract class ObjectPool<T> {
     }
 
     public synchronized void release(T object){
-        if(pool.size() < MAX_SIZE){
+        if(pool.size() <= MIN_SIZE){
             pool.offer(object);
         } else{
             object = null;
